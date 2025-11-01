@@ -1,20 +1,39 @@
 import express from "express";
-import OpenAI from 'openai';
 import 'dotenv/config';
+import cors from 'cors';
+import getAPIResponse from "./utils/apiModel.js";
+import mongoose from "mongoose";
+import router from "./routes/chat.js";
 const app = express();
 const port = 8080;
 
+main().catch((err) => console.error(err));
+async function main() {
+  await mongoose.connect(process.env.ATLASDB_URL);
+  console.info("✅ Database connection successful.");
+}
 
-const client = new OpenAI({
-  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
-});
+app.use(express.json())
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
-const response = await client.responses.create({
-  model: 'gpt-4o',
-  instructions: 'You are a coding assistant that talks like a pirate',
-  input: 'Are semicolons optional in JavaScript?',
-});
+app.use("/api", router);
 
-console.log(response.output_text);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+
+
+
+
+
+// app.post("/test", async (req, res) => {
+//   let {message} = req.body;
+//   console.log(message)
+//   let response = await getAPIResponse(message);
+//   // console.log(response)
+
+//   res.send(response);
+
+// })
