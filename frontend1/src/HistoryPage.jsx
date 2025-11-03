@@ -5,7 +5,7 @@ function HistoryPage() {
     let [ data, setData ] = useState([]);
     let getReply = async () => {
         try {
-            let reply = await fetch("http://localhost:8080/api/notes");
+            let reply = await fetch("https://ainotesassistant.onrender.com/api/notes");
             let response = await reply.json();
             setData(response);
         } catch (e) {
