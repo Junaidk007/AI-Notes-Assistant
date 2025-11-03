@@ -26,7 +26,7 @@ router.post("/test", wrapAsync(async (req, res) => {
 router.get("/notes", wrapAsync(async (req, res) => {
     let allNotes = await Message.find().sort({ timestamp: -1 });
 
-    res.send(allNotes);
+    res.json(allNotes);
 }))
 
 // to get particular notes through id
@@ -48,17 +48,17 @@ router.delete("/notes/:noteId", wrapAsync(async (req, res) => {
     let { noteId } = req.params;
     let note = await Message.findByIdAndDelete(noteId);
 
-    res.send("Note deleted successully!");
+    res.json("Note deleted successully!");
 }))
 
 // api endpoint for creating new notes or askking note
 
 router.post("/asknotes", wrapAsync(async (req, res) => {
-    let { topic } = req.body;
-    let response = await getAPIResponse(topic);
+    let body = req.body;
+    let response = await getAPIResponse(body);
 
     let note = new Message({
-        title: topic,
+        title: body.topic,
         message: response
     });
 

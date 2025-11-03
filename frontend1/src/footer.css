@@ -1,0 +1,56 @@
+footer {
+    background-color: #ff6b01;
+}
+
+.logo {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 5rem;
+    overflow: hidden ;
+}
+
+a {
+    color: white;
+}
+
+.brandBox .brandb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+}
+
+.brandb b {
+    color: rgb(0, 0, 0);
+}
+
+.socials {
+    color: white;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.socials i {
+    padding-right: 3rem;
+}
+
+.info p{
+    font-size: 0.75rem;
+    color: #d7d8d8;
+}
+
+.info div {
+    align-items: center;
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6;
+}

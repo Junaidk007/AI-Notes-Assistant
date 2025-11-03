@@ -1,6 +1,7 @@
 import "dotenv/config";
 
-const getAPIResponse = async (message) => {
+const getAPIResponse = async (body) => {
+    let {topic,level,count} = body;
     const options = {
         method: "POST",
         headers: {
@@ -12,11 +13,21 @@ const getAPIResponse = async (message) => {
             messages: [
                 {
                     role: "user",
-                    content: message
+                    content: `Act like an experienced teacher and explain the topic "${topic}" in a clear, simple, and detailed way, word count should be ${count} - words and the level of notes should be ${level} level. 
+Format the notes with:
+- Title: "${topic} Notes"
+- Level: ${level} 
+- Word count: ~${count} words
+- Use headings, subheadings, and bullet points
+- Break down complex terms into simple language
+- Include real-life or relatable examples
+- Add small questions after sections to check understanding
+- End with a "Quick Recap" summarizing key points
+Make the notes easy to read and study.`
                 },
                 {
                     role: "system",
-                    content: "You are a helpful assistant. /no_think"
+                    content: "You are a helpful assistant. /think"
                 }
             ],
         })
