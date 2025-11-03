@@ -22,7 +22,7 @@ function InputBox() {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/api/asknotes", options);
+            const response = await fetch("https://ainotesassistant.onrender.com/api/asknotes", options);
             let rep = await response.json();
             if (!rep) {
                 setLoading(false);

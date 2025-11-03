@@ -8,18 +8,19 @@ function HistoryBox({data, setData}) {
     const deleteNotes = async () => {
         const id = data._id;
         try {
-            let response = await fetch(`http://localhost:8080/api/notes/${id}`, {method: 'DELETE'});
+            let response = await fetch(`https://ainotesassistant.onrender.com/api/notes/${id}`, {method: 'DELETE'});
             let mes = await response.json();
             setData((prevNotes) => prevNotes.filter(note => note._id !== id));
         } catch (e) {
             console.log(e);
         }
+        
     }
 
     const getNotes = async () => {
         const id = data._id;
         try {
-            let response = await fetch(`http://localhost:8080/api/notes/${id}`);
+            let response = await fetch(`https://ainotesassistant.onrender.com/api/notes/${id}`);
             let mes = await response.json();
             // setNote(mes);
             setReply(mes.message)
