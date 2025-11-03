@@ -1,0 +1,28 @@
+.navbar {
+    /* background-color: #1b1b1b; */
+}
+
+/* .navbar b {
+    color: black;
+    
+} */
+
+.logo {
+    overflow: hidden;
+    background-position: center;
+    background-size: 2.75rem;
+    background-image: url("/ai-logo.jpg");
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.usericon {
+    background-color: #FF6B01;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem !important;
+    width: 2rem !important;
+}
+

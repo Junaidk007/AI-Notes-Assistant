@@ -61,7 +61,7 @@ function ChatWindow() {
     return (
         <div className="chatWindow">
             <div className="navbar">
-                <span>SigmaGPT <i className="fa-solid fa-chevron-down"></i></span>
+                <span>Notes Assistant <i className="fa-solid fa-chevron-down"></i></span>
                 <div className="userIconDiv" onClick={handleProfileClick}>
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
                 </div>
@@ -74,10 +74,9 @@ function ChatWindow() {
                     <div className="dropDownItem"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
                 </div>
             }
-            <Chat></Chat>
+            {/* <Chat/> */}
 
-            <ScaleLoader color="#fff" loading={loading}>
-            </ScaleLoader>
+            {/* <ScaleLoader color="#fff" loading={loading} /> */}
             
             <div className="chatInput">
                 <div className="inputBox">
@@ -91,7 +90,7 @@ function ChatWindow() {
                     <div id="submit" onClick={getReply}><i className="fa-solid fa-paper-plane"></i></div>
                 </div>
                 <p className="info">
-                    SigmaGPT can make mistakes. Check important info. See Cookie Preferences.
+                    Notes Assitant can make mistakes. Check important info. See Cookie Preferences.
                 </p>
             </div>
         </div>

@@ -1,16 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css'
-import Navbar from './component/Navbar.jsx'
-import InputBox from './component/InputBox'
-import MainPage from './component/MainPage'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Navbar/>
-    <InputBox/> */}
-    
-    <MainPage/>
+   <App/>
   </StrictMode>
 )
