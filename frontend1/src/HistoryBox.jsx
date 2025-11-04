@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './historybox.css'
 import { useContext } from "react";
 import { MyContext } from "./MyContext";
 
@@ -47,17 +48,25 @@ function HistoryBox({ data, setData }) {
     const plainText = preview.replace(/[#_*`>!\[\]\(\)]/g, "");
 
     return (
-        <div class="card mb-3">
-            <Link onClick={getNotes} to={"/"}>
-                <div className="card-body justify-content-between d-flex align-items-center p-4">
-                    <div style={{ width: "95%" }}>
+        <div class="card mb-3 flex-row box">
+            <Link onClick={getNotes} to={"/"} className="col-11">
+                <div className="box2 card-body justify-content-between d-flex align-items-center p-4 pe-0 ps-0">
+                    <div style={{ width: "100%" }}>
                         <h5 className="card-title " style={{ color: "#353535", width: "100%" }}>{data.title}</h5>
-                        <p style={{ color: "black", fontSize: "0.75rem" }} className="text-muted border-bottom pb-2 mb-3">{formattedDate}&nbsp;&nbsp;&#124;&nbsp;&nbsp;{formattedTime}</p>
+                        <p style={{ color: "black", fontSize: "0.75rem" }} className="text-muted mb-0">{formattedDate}&nbsp;&nbsp;&#124;&nbsp;&nbsp;{formattedTime}</p>
+                        <div className="border-bottom pb-2 mb-3 pt-0 mt-0" style={{width: "61.5rem"}}></div>
                         <p className="card-text" style={{ color: "#353535" }}>{plainText}</p>
                     </div>
-                    <i onClick={deleteNotes} className="fa-solid fa-trash" style={{ color: "#ff6b01" }}></i>
                 </div>
             </Link>
+            <div className="col-1" style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: 'start',
+                padding: "1rem 0 0 2.5rem "
+            }}>
+            <i onClick={deleteNotes} className="fa-solid fa-xmark " style={{ color: "#ff6b01" }}></i>
+            </div>
         </div>
     );
 }

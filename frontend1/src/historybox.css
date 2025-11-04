@@ -1,0 +1,14 @@
+.box {
+    overflow: hidden;
+}
+
+.box2 {
+    border-left: 12px solid;
+    padding-left: 12px !important;
+    
+}
+
+.box2:hover {
+    border-color: #ff6b01;
+    transition: ease-in 0.2s;
+}
