@@ -1,7 +1,7 @@
 import "dotenv/config";
 
 const getAPIResponse = async (body) => {
-    let {topic,level,count} = body;
+    let {topic,level,count,reason} = body;
     const options = {
         method: "POST",
         headers: {
@@ -27,7 +27,7 @@ Make the notes easy to read and study.`
                 },
                 {
                     role: "system",
-                    content: "You are a helpful assistant. /think"
+                    content: `You are a helpful assistant. ${reason? "/think" : "/no_think"}`
                 }
             ],
         })

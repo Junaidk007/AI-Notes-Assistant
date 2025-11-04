@@ -2,9 +2,25 @@ import { useContext, useState } from "react";
 import './inputBox.css'
 import './navbar.css'
 import { MyContext } from "./MyContext";
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 function InputBox() {
     const { prompt, setPrompt, reply, setReply, loading, setLoading, setTitle, option, setOption, count, setCount } = useContext(MyContext);
+    let [check, setCheck] = useState(false);
+
+    let handelSwitch = (event) => {
+        setCheck(event.target.checked);
+    }
+    let switchStyle = {
+        "& .MuiSwitch-thumb": {
+            backgroundColor: "black",
+        },
+        "& .MuiSwitch-switchBase.Mui-checked .MuiSwitch-thumb": {
+            backgroundColor: "#ff6b01", // orange
+        },
+    }
 
     const getReply = async () => {
         setTitle(false);
@@ -17,7 +33,8 @@ function InputBox() {
             body: JSON.stringify({
                 topic: prompt,
                 count: count,
-                level: option
+                level: option,
+                reason: check
             })
         }
 
@@ -72,7 +89,9 @@ function InputBox() {
                                 <li onClick={() => setOption("Advance")} className={option === "Advance" ? "heighlight" : ""}>Advance</li>
                             </ul>
                         </div>
-
+                        <div>
+                            <FormControlLabel control={<Switch {...label} color="warning" sx={switchStyle} onChange={handelSwitch} checked={check} />} label="Reasoning" />
+                        </div>
                     </div>
                     <div className="col-5">
                         <div id="submit" onClick={prompt ? getReply : null}><i className="fa-solid fa-paper-plane"></i></div>
