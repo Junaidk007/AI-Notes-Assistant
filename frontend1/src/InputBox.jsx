@@ -74,9 +74,9 @@ function InputBox() {
                                 {count ? count : "count"}
                             </button>
                             <ul className="dropdown-menu inp-drop shadow">
-                                <li onClick={() => setCount("250")} className={option === "250" ? "heighlight" : ""}>250</li>
-                                <li onClick={() => setCount("500")} className={option === "500" ? "heighlight" : ""}>500</li>
-                                <li onClick={() => setCount("1000")} className={option === "1000" ? "heighlight" : ""}>1000</li>
+                                <li onClick={() => setCount("250")} className={count === "250" ? "heighlight" : ""}>250</li>
+                                <li onClick={() => setCount("500")} className={count === "500" ? "heighlight" : ""}>500</li>
+                                <li onClick={() => setCount("1000")} className={count === "1000" ? "heighlight" : ""}>1000</li>
                             </ul>
                         </div>
                         <div className="btn-group">

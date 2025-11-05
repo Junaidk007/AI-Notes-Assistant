@@ -80,7 +80,7 @@ input:focus {
 }
 
 .heighlight {
-    background-color: #ff6b01;
+    background-color: #ff6b01 !important;
     color: white;
 
 }
