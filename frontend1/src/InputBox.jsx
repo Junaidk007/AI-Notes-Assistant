@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import './inputBox.css'
 import './navbar.css'
 import { MyContext } from "./MyContext";
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '../node_modules/@mui/material/Switch';
+import FormControlLabel from '../node_modules/@mui/material/FormControlLabel';
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 function InputBox() {
