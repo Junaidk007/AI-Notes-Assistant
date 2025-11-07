@@ -33,3 +33,22 @@ a {
 .fa-trash:hover {
   color: #F2BFA4 !important;
 }
+
+
+.copybtn i {
+  color: #0c0c0c;
+}
+
+.copybtn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.copybtn i:hover {
+  color: #ff6b01;
+  /* green accent */
+}

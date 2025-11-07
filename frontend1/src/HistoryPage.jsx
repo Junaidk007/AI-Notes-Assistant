@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { MyContext } from "./MyContext";
 
 function HistoryPage() {
-    let { setLoading, loading } = useContext(MyContext)
+    let { setLoading, loading, setIsOpen } = useContext(MyContext)
     let [data, setData] = useState([]);
 
     let override = {
@@ -27,6 +27,7 @@ function HistoryPage() {
 
     useEffect(() => {
         getReply();
+        setIsOpen(false)
     }, [])
 
     console.log(data)

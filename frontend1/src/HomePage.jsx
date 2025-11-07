@@ -3,17 +3,21 @@ import Logo from "./Logo";
 import Notes from "./Notes";
 import Navbar from "./Navbar";
 import { RiseLoader } from 'react-spinners'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext";
 
 function HomePage() {
-    const { loading, setLoading, reply, title, note, setReply } = useContext(MyContext);
+    const { loading, setLoading, reply, title, note, setReply, setIsOpen } = useContext(MyContext);
 
     let override = {
         display: "inline-flex",
         justifyContent: "center",
         margin: "4rem 0 4rem 0"
     }
+
+    useEffect(() =>  {
+        setIsOpen(false)
+    }, [ ])
 
     return (
         <div className={`d-flex flex-column ${reply ? "justify-content-start mt-5" : "justify-content-center"} `} style={{ minHeight: "89vh", }} >
