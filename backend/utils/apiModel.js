@@ -19,8 +19,8 @@ The explanation should be around ${count} words and at a ${level} level (if spec
 Format the notes as follows:
 
 Title: "${topic} Notes"
-Level: ${level} (only if mentioned)
-Word Count: ~${count} words (only if mentioned)
+Level: ${level} (only if mentioned and don't show if null)
+Word Count: ~${count} words (only if mentioned and don't show if null)
 
 Guidelines for Writing
 
