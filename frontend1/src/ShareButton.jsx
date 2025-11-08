@@ -1,4 +1,4 @@
-import Tooltip from "../node_modules/@mui/material/Tooltip";
+import Tooltip from "@mui/material/Tooltip";
 
 function ShareButton({ markdownText }) {
   const handleShare = async () => {

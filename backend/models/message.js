@@ -6,6 +6,7 @@ const messageSchema = new Schema({
     message: {
         type: String
     },
+    shareId: { type: String, unique: true, sparse: true },
     timestamp: {
         type: Date,
         default: Date.now
@@ -14,4 +15,4 @@ const messageSchema = new Schema({
 
 const Message = mongoose.model("Message", messageSchema);
 
-export {Message, messageSchema};
+export { Message, messageSchema };

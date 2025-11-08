@@ -13,17 +13,33 @@ const getAPIResponse = async (body) => {
             messages: [
                 {
                     role: "user",
-                    content: `Act like an experienced teacher and explain the topic "${topic}" in a clear, simple, and detailed way, word count should be ${count} - words and the level of notes should be ${level} level. 
-Format the notes with:
-- Title: "${topic} Notes"
-- Level: ${level} 
-- Word count: ~${count} words
-- Use headings, subheadings, and bullet points
-- Break down complex terms into simple language
-- Include real-life or relatable examples
-- Add small questions after sections to check understanding
-- End with a "Quick Recap" summarizing key points
-Make the notes easy to read and study.`
+                    content: `Act like an experienced teacher and explain the topic "${topic}" in a clear, simple, and detailed way.
+The explanation should be around ${count} words and at a ${level} level (if specified).
+
+Format the notes as follows:
+
+Title: "${topic} Notes"
+Level: ${level} (only if mentioned)
+Word Count: ~${count} words (only if mentioned)
+
+Guidelines for Writing
+
+Use headings, subheadings, and bullet points for clarity.
+
+Break down complex terms into simple, understandable language.
+
+Include real-life or relatable examples wherever possible.
+
+After each section, add 1–2 short self-check questions to test understanding.
+
+End with a “Quick Recap” summarizing key points.
+
+Add emojis to make the notes fun, friendly, and visually engaging.
+
+If the user specifies subtopics, give them more importance in the notes.
+
+Goal:
+Make the notes easy to read, well-organized, and helpful for study or revision.`
                 },
                 {
                     role: "system",

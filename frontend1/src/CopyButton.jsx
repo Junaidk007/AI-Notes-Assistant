@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Tooltip from '../node_modules/@mui/material/Tooltip';
+import Tooltip from '@mui/material/Tooltip';
 
 function CopyButton({ markdownText }) {
     const [copied, setCopied] = useState(false);

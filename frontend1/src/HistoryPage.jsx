@@ -29,8 +29,6 @@ function HistoryPage() {
         getReply();
         setIsOpen(false)
     }, [])
-
-    console.log(data)
     // getReply();
     return (
         <div className="d-flex flex-column pt-5 mb-5" style={{

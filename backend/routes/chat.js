@@ -2,6 +2,7 @@ import express from 'express';
 import wrapAsync from '../utils/wrapAsync.js';
 import getAPIResponse from '../utils/apiModel.js';
 import { Message } from '../models/message.js';
+import { v4 as uuidv4 } from "uuid";
 import mongoose from 'mongoose';
 
 const router = express.Router();
@@ -59,13 +60,15 @@ router.post("/asknotes", wrapAsync(async (req, res) => {
 
     let note = new Message({
         title: body.topic,
-        message: response
+        message: response,
+        shareId: uuidv4()
     });
 
     await note.save();
 
-    res.json(response);
+    let data = await Message.findOne({shareId: note.shareId})
+    console.log(data)
+    res.json(data);
 }))
-
 
 export default router;
