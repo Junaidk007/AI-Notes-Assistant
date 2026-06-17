@@ -49,7 +49,7 @@ function InputBox() {
                 return
             }
 
-            let message = rep.message;
+            let message = rep?.message;
             setReply(message);
         } catch (e) {
             console.log(e)
