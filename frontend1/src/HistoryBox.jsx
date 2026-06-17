@@ -45,7 +45,7 @@ function HistoryBox({ data, setData }) {
     }
 
     const preview = data.message?.replace(/[#_*`>!\[\]\(\)]/g, "");
-    const plainText = preview.length > 300 ? preview.slice(0, 300) + ". . . . . . . ." : preview;
+    const plainText = preview && preview.length > 300 ? preview.slice(0, 300) + ". . . . . . . ." : preview;
 
     return (
         <div class="card mb-3 flex-row box">
